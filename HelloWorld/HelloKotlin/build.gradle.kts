@@ -10,6 +10,15 @@ plugins{
     id("com.gradleup.static-analysis") version "1.3"
 }
 
+version = "1.0-SNAPSHOT"
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_15
+    targetCompatibility = JavaVersion.VERSION_15
+    withSourcesJar() //creates javadoc in hello-groovy-1.0-SNAPSHOT-javadoc.jar in /build/libs
+    withJavadocJar() //creates sources in hello-groovy-1.0-SNAPSHOT-sources.jar in /build/libs
+}
+
 tasks.register("hello") {
     doFirst {
         println("first hello")
